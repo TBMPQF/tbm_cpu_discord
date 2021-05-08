@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const fs = require("fs");
 const Discord = require("discord.js");
 const welcome = require("./welcome");
@@ -10,7 +12,6 @@ const level = require("./level-system");
 Levels.setURL("mongodb+srv://TBMPQF:Ak47z8f2s*@botdiscord.qe27u.mongodb.net/test")
 mongoose.connect("mongodb+srv://TBMPQF:Ak47z8f2s*@botdiscord.qe27u.mongodb.net/test", { useNewUrlParser: true }, { useUnifiedTopology: true }, { useCreateIndex: true }, { useFindAndModify: false }).then(() => console.log('Base de donnée chargée!')).catch(err => {console.log(`BD Connexion Erreur: ${err.message}`);});
 
-Client.login(config.token)
 Client.commands = new Discord.Collection()
  
 fs.readdir('./commands', (err, files) => {
@@ -200,3 +201,5 @@ Client.on("message", async message => {
 
   command.run(message, args, Client)
 })
+
+Client.login(process.env.TOKEN);
