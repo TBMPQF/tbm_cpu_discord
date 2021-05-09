@@ -8,6 +8,7 @@ const config = require('./config.json');
 const mongoose = require("mongoose");
 const Levels = require('discord-xp');
 const level = require("./level-system");
+const ytdl = require("ytdl-core");
 
 const prefix = "!"
 var list = [];
