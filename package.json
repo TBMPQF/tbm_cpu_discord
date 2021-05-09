@@ -5,7 +5,6 @@
   "main": "index.js",
   "dependencies": {
     "node": "^14.16.0",
-    "anti-spam-discord": "^1.0.0",
     "canvas": "^2.7.0",
     "canvacord": "^5.1.0",
     "commands": "^0.0.7",
