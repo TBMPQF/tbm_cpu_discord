@@ -9,8 +9,8 @@ const mongoose = require("mongoose");
 const Levels = require('discord-xp');
 const level = require("./level-system");
 
-Levels.setURL("mongodb+srv://TBMPQF:Ak47z8f2s*@botdiscord.qe27u.mongodb.net/test")
-mongoose.connect("mongodb+srv://TBMPQF:Ak47z8f2s*@botdiscord.qe27u.mongodb.net/test", { useNewUrlParser: true }, { useUnifiedTopology: true }, { useCreateIndex: true }, { useFindAndModify: false }).then(() => console.log('Base de donnée chargée!')).catch(err => {console.log(`BD Connexion Erreur: ${err.message}`);});
+Levels.setURL("mongodb+srv://YOUR_PASSWORD@botdiscord.qe27u.mongodb.net/test")
+mongoose.connect("mongodb+srv://YOUR_PASSWORD@botdiscord.qe27u.mongodb.net/test", { useNewUrlParser: true }, { useUnifiedTopology: true }, { useCreateIndex: true }, { useFindAndModify: false }).then(() => console.log('Base de donnée chargée!')).catch(err => {console.log(`BD Connexion Erreur: ${err.message}`);});
 
 Client.commands = new Discord.Collection()
  
