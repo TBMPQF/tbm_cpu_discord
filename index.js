@@ -10,6 +10,7 @@ const Levels = require('discord-xp');
 const level = require("./level-system");
 
 const prefix = "!"
+var list = [];
 
 mongoose.connect(process.env.DB_CONNECT, {
   useNewUrlParser: true,
