@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: 'ENV_FILENAME' });
 
 const fs = require("fs");
 const Discord = require("discord.js");
@@ -9,18 +9,18 @@ const mongoose = require("mongoose");
 const Levels = require('discord-xp');
 const level = require("./level-system");
 
-Levels.setURL(process.env.MONGODB_SRV)
 mongoose.connect(process.env.MONGODB_SRV, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  })
+})
   .then(() => {
     console.log("La Base de donnée est connectée.");
-  })
+})
   .catch((err) => {
     console.log(err);
-  });
+});
+Levels.setURL(process.env.MONGODB_SRV)
 
 Client.commands = new Discord.Collection()
  
