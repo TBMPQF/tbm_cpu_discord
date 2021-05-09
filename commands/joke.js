@@ -29,7 +29,7 @@ const Discord = require('discord.js'),
             "**Comment s'appelle la plus grande fête juive au monde ?**\n\n||Les soldes.||", "**Quelle est la différence entre un enfant de chœur catholique et un enfant djihadiste ?**\n\n||L'enfant djihadiste se fait sauter qu'une seule fois.||",
             "**Pourquoi les handicapés aiment-t'ils bien le romarin ?**\n\n||Car ça se marie bien avec les légumes.||", "**C'est quoi un grain de riz dans un évier ?**\n\n||Un somalien qui a vomi toute la nuit ||",
             "**Quel est le meilleur moyen de traiter ses problèmes d'érection ?**\n\n||Le suicide.||", "**Où se situe la majeure partie de la population juive ?**\n\n||Ça dépend du vent.||",
-            "**Une gamine de 8 ans dit à son père : - Papa, j'ai peur dans cette grande forêt toute sombre !**\n\n||- Ben, qu'est-ce que je devrais dire, moi qui vais rentrer tout seul, ce soir !||", "**Hier j'ai donné un coup de pieds au cul à un Roumain.**\n\n||Le salop il a serré les fesses et m'a piqué une Nike...||",
+            "**Une gamine de 8 ans dit à son père : - Papa, j'ai peur dans cette grande forêt toute sombre !**\n\n||- Qu'est-ce que je devrais dire, moi qui vais rentrer tout seul, ce soir !||", "**Hier j'ai donné un coup de pieds au cul à un Roumain.**\n\n||Le salop il a serré les fesses et m'a piqué une Nike...||",
             "****\n\n||||", "****\n\n||||",
         ]
             //"****\n\n||||", "****\n\n||||",
