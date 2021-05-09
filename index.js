@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const Levels = require('discord-xp');
 const level = require("./level-system");
 
-Levels.setURL(process.env.LEVELS_URL)
+Levels.setURL(process.env.MONGODB_SRV)
 mongoose.connect(process.env.MONGODB_SRV, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
