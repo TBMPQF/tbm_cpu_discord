@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "anti-spam": "^0.2.7",
+    "node": "^14.16.0",
     "anti-spam-discord": "^1.0.0",
     "canvas": "^2.7.0",
     "canvacord": "^5.1.0",
