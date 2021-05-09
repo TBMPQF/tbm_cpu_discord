@@ -186,16 +186,16 @@ Client.on("message", async message => {
 
 
   if(message.content === prefix + "playlist"){
-    let msg = "**PLAYLIST :**\n";
+    let message = "**PLAYLIST :**\n";
 for(var i = 1;i < list.length;i++){
 let name;
 
 let getinfo = await ytdl.getBasicInfo(list[i]);
 name = getinfo.videoDetails.title;
-msg += '**' + i + ".** " + name + '\n';
+message += '**' + i + ".** " + name + '\n';
 
 }
-message.channel.send(msg);
+message.channel.send(message);
     
 }
 
