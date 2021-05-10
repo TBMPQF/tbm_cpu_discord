@@ -226,14 +226,14 @@ Client.on("message", async message => {
                 const nowPlay = new Discord.MessageEmbed()
                 .setColor("GREY")
                 .setDescription(`:loud_sound: 𝐎k mon bro. 𝐉'ajoute à la playlist.`)
-                await message.channel.send(nowPlay)
+                await message.channel.send(nowPlay).then(sent => sent.delete({timeout: 7e3}));
               }
                 else {
                   list.push(args[1]);
                   const nowPlays = new Discord.MessageEmbed()
                   .setColor("GREY")
                   .setDescription(`:loud_sound: 𝐎k mon bro. 𝐉'ajoute à la playlist.`)
-                  await message.channel.send(nowPlays)
+                  await message.channel.send(nowPlays).then(sent => sent.delete({timeout: 7e3}));
 
                   message.member.voice.channel.join().then(connection => {
                     playMusic(connection);
