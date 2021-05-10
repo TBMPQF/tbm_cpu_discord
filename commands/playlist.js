@@ -1,3 +1,4 @@
+const ytdl = require("ytdl-core");
 var list = [];
 
 module.exports = {

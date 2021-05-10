@@ -1,3 +1,4 @@
+const Discord = require('discord.js')
 const ytdl = require("ytdl-core");
 var list = require("./playlist");
 
