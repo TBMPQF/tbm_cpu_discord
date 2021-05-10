@@ -30,12 +30,6 @@ module.exports = {
                     await message.channel.send(nowPlay)
                 }
                 else {
-                    list.push(args[1]);
-                    const nowPlay1 = new Discord.MessageEmbed()
-                    .setColor("GREY")
-                    .setDescription(`𝐎k mon bro.. 𝐉e rajoute \`${video.title}\` à la playlist.`)
-                    await message.channel.send(nowPlay1)
-
                     message.member.voice.channel.join().then(connection => {
                     playMusic(connection);
 
