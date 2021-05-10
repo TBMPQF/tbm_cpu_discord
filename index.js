@@ -190,6 +190,7 @@ Client.on("message", async message => {
 
   //list
   if(message.content === prefix + "playlist"){
+    message.delete()
     let msg = "**PLAYLIST :**\n";
     for(var i = 1;i < list.length;i++){
     let name;
