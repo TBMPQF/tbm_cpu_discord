@@ -205,7 +205,6 @@ Client.on("message", async message => {
     else if(message.content.startsWith(prefix + "play")){
       const voiceChannel = message.member.voice.channel;
       if (!voiceChannel){
-          message.delete()
           const pasdeSalon = new Discord.MessageEmbed()
           .setColor("GREY")
           .setDescription(`𝐓u dois être dans un salon vocal avant d'effectuer cette commande \`!play\``)
@@ -214,7 +213,6 @@ Client.on("message", async message => {
       if(message.member.voice.channel){
         let args = message.content.split(" ");
         if(args[1] == undefined || !args[1].startsWith("https://www.youtube.com/watch?v=")){
-            message.delete()
             const vide = new Discord.MessageEmbed()
             .setColor("GREY")
             .setDescription(`𝐋e lien est manquant/incorrect.`)
@@ -245,8 +243,9 @@ Client.on("message", async message => {
                   }).catch(err => {
                     message.reply("erreur lors de la connexion : " + err);
                 })
-            }
-        }
+          }
+      }
+    message.delete()
     }
 }
 
