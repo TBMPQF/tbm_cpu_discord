@@ -203,19 +203,37 @@ Client.on("message", async message => {
     
   }
     else if(message.content.startsWith(prefix + "play")){
+      const voiceChannel = message.member.voice.channel;
+      if (!voiceChannel){
+          message.delete()
+          const pasdeSalon = new Discord.MessageEmbed()
+          .setColor("GREY")
+          .setDescription(`𝐓u dois être dans un salon vocal avant d'effectuer cette commande \`!play\``)
+          return message.channel.send(pasdeSalon).then(sent => sent.delete({timeout: 7e3}));
+      }
       if(message.member.voice.channel){
         let args = message.content.split(" ");
         if(args[1] == undefined || !args[1].startsWith("https://www.youtube.com/watch?v=")){
-          message.reply("Lien de la vidéo non ou mal mentionné.");
+            message.delete()
+            const vide = new Discord.MessageEmbed()
+            .setColor("GREY")
+            .setDescription(`𝐋e lien est manquant/incorrect.`)
+            return message.channel.send(vide).then(sent => sent.delete({timeout: 7e3}));
           }
             else {
               if(list.length > 0){
                 list.push(args[1]);
-                message.reply("Vidéo ajouté a la liste !")
+                const nowPlay = new Discord.MessageEmbed()
+                .setColor("GREY")
+                .setDescription(`𝐎k mon bro. 𝐉'ajoute \`${video.title}\` à la playlist.`)
+                await message.channel.send(nowPlay)
               }
                 else {
                   list.push(args[1]);
-                  message.reply("Vidéo ajouté a la liste !");
+                  const nowPlays = new Discord.MessageEmbed()
+                  .setColor("GREY")
+                  .setDescription(`𝐎k mon bro. 𝐉'ajoute \`${video.title}\` à la playlist.`)
+                  await message.channel.send(nowPlays)
 
                   message.member.voice.channel.join().then(connection => {
                     playMusic(connection);
