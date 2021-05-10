@@ -1,31 +1,51 @@
 const ytdl = require("ytdl-core");
 var list = require("./playlist");
 
-if(message.content.startsWith(prefix + "play")){
-    if(message.member.voice.channel){
-        let args = message.content.split(" ");
-        if(args[1] == undefined || !args[1].startsWith("https://www.youtube.com/watch?v=")){
-            message.reply("Lien de la vidéo non ou mal mentionné.");
+module.exports = {
+    run: async (message, args) => {
+        if(!message.member.voice.channel){
+            message.delete()
+            const pasdeSalon = new Discord.MessageEmbed()
+            .setColor("GREY")
+            .setDescription(`𝐓u dois être dans un salon vocal avant d'effectuer cette commande \`!play\``)
+            return message.channel.send(pasdeSalon).then(sent => sent.delete({timeout: 7e3}));
         }
-        else {
-            if(list.length > 0){
-                list.push(args[1]);
-                message.reply("Vidéo ajouté a la liste !")
+        if(message.member.voice.channel){
+            let args = message.content.split(" ");
+            if(args[1] == undefined || !args[1].startsWith("https://www.youtube.com/watch?v=")){
+                message.delete()
+                const vide = new Discord.MessageEmbed()
+                .setColor("GREY")
+                .setDescription(`𝐓u dois me donner un lien/nom de musique.`)
+                return message.channel.send(vide).then(sent => sent.delete({timeout: 7e3}));
             }
             else {
-                list.push(args[1]);
-                message.reply("Vidéo ajouté a la liste !");
+                const video = await videoFinder(args.join(' '));
+                if(list.length > 0){
+                    list.push(args[1]);
+                    const nowPlay = new Discord.MessageEmbed()
+                    .setColor("GREY")
+                    .setDescription(`𝐎k mon bro.. 𝐉e rajoute \`${video.title}\` à la playlist.`)
+                    await message.channel.send(nowPlay)
+                }
+                else {
+                    list.push(args[1]);
+                    const nowPlay1 = new Discord.MessageEmbed()
+                    .setColor("GREY")
+                    .setDescription(`𝐎k mon bro.. 𝐉e rajoute \`${video.title}\` à la playlist.`)
+                    await message.channel.send(nowPlay1)
 
-                message.member.voice.channel.join().then(connection => {
-                   playMusic(connection);
+                    message.member.voice.channel.join().then(connection => {
+                    playMusic(connection);
 
-                   connection.on("disconnect", () =>{
+                    connection.on("disconnect", () =>{
                        list = [];
-                   });
+                    });
 
-                }).catch(err => {
-                    message.reply("erreur lors de la connexion : " + err);
-                });
+                    }).catch(err => {
+                        message.reply("erreur lors de la connexion : " + err);
+                    });
+                }
             }
         }
     }
