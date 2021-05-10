@@ -221,6 +221,7 @@ Client.on("message", async message => {
             return message.channel.send(vide).then(sent => sent.delete({timeout: 7e3}));
           }
             else {
+              const video = await videoFinder(args.join(' '));
               if(list.length > 0){
                 list.push(args[1]);
                 const nowPlay = new Discord.MessageEmbed()
