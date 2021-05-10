@@ -8,10 +8,6 @@ const config = require('./config.json');
 const mongoose = require("mongoose");
 const Levels = require('discord-xp');
 const level = require("./level-system");
-const ytdl = require("ytdl-core");
-
-const prefix = "!"
-var list = [];
 
 mongoose.connect(process.env.DB_CONNECT, {
   useNewUrlParser: true,
@@ -183,61 +179,6 @@ Client.on("message", async message => {
     message.react("831961805705183254")
   }
 
-
-
-
-
-  if(message.content === prefix + "playlist"){
-    let message = "**PLAYLIST :**\n";
-for(var i = 1;i < list.length;i++){
-let name;
-
-let getinfo = await ytdl.getBasicInfo(list[i]);
-name = getinfo.videoDetails.title;
-message += '**' + i + ".** " + name + '\n';
-
-}
-message.channel.send(message);
-    
-}
-
-else if(message.content.startsWith(prefix + "play")){
-     if(message.member.voice.channel){
-         let args = message.content.split(" ");
-         if(args[1] == undefined || !args[1].startsWith("https://www.youtube.com/watch?v=")){
-             message.reply("Lien de la vidéo non ou mal mentionné.");
-         }
-         else {
-             if(list.length > 0){
-                 list.push(args[1]);
-                 message.reply("Vidéo ajouté a la liste !")
-             }
-             else {
-                 list.push(args[1]);
-                 message.reply("Vidéo ajouté a la liste !");
-
-                 message.member.voice.channel.join().then(connection => {
-                    playMusic(connection);
-
-                    connection.on("disconnect", () =>{
-                        list = [];
-                    });
-
-                 }).catch(err => {
-                     message.reply("erreur lors de la connexion : " + err);
-                 });
-             }
-         }
-     }
-}
-
-
-
-
-
-
-
-
   const args = message.content.trim().split(/ +/g)
   const commandName = args.shift().toLowerCase()
   const command = Client.commands.get(commandName.slice(config.prefix.length));
@@ -270,34 +211,5 @@ else if(message.content.startsWith(prefix + "play")){
 
   command.run(message, args, Client)
 })
-
-
-
-
-function playMusic(connection){
-  let dispatcher = connection.play(ytdl(list[0], { quality: "highestaudio" }));
-
-  dispatcher.on("finish", () => {
-      list.shift();
-      dispatcher.destroy();
-
-      if(list.length > 0){
-          playMusic(connection);
-      }
-      else {
-          connection.disconnect();
-      }
-  });
-
-  dispatcher.on("error", err => {
-      console.log("erreur de dispatcher : " + err);
-      dispatcher.destroy();
-      connection.disconnect();
-  })
-}
-
-
-
-
 
 Client.login(process.env.TOKEN);
