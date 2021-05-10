@@ -28,8 +28,8 @@ fs.readdir('./commands', (err, files) => {
     if (err) throw err
     files.forEach(file => {
         if (!file.endsWith('.js')) return
-        const command = require(`./commands/${file}`)
-        Client.commands.set(command.name, command)
+        const command1 = require(`./commands/${file}`)
+        Client.commands.set(command1.name, command1)
     })
 })
 
