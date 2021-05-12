@@ -224,7 +224,7 @@ Client.on("message", async message => {
                 list.push(args[1]);
                 const nowPlay = new Discord.MessageEmbed()
                 .setColor("GREY")
-                .setDescription(`:loud_sound: 𝐉e lance la musique tisuite.`)
+                .setDescription(`:loud_sound: 𝐎k mon bro. 𝐉'ajoute à la playlist.`)
                 await message.channel.send(nowPlay).then(sent => sent.delete({timeout: 7e3}));
               }
                 else {
