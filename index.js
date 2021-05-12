@@ -226,10 +226,4 @@ Client.on("message", async message => {
   command.run(message, args, Client)
 })
 
-  dispatcher.on("error", err => {
-      console.log("erreur de dispatcher : " + err);
-      dispatcher.destroy();
-      connection.disconnect();
-  })
-
 Client.login(process.env.TOKEN);
