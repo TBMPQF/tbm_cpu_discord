@@ -8,9 +8,9 @@ const config = require('./config.json');
 const mongoose = require("mongoose");
 const Levels = require('discord-xp');
 const level = require("./level-system");
-const ytdl = require("ytdl-core");
+const ytdl = require('ytdl-core')
 
-var list = [];
+var list = []
 
 const prefix = "!"
 
@@ -184,10 +184,6 @@ Client.on("message", async message => {
     message.react("831961805705183254")
   }
 
-
-
-
-
   //list
   if(message.content === prefix + "playlist"){
     message.delete()
@@ -209,7 +205,7 @@ Client.on("message", async message => {
           const pasdeSalon = new Discord.MessageEmbed()
           .setColor("GREY")
           .setDescription(`𝐓u dois être dans un salon vocal avant d'effectuer cette commande \`!play\``)
-          return message.channel.send(pasdeSalon).then(sent => sent.delete({timeout: 7e3}));
+          return message.channel.send(pasdeSalon).then(sent => sent.delete({timeout: 5e3}));
       }
       if(message.member.voice.channel){
         let args = message.content.split(" ");
@@ -217,7 +213,7 @@ Client.on("message", async message => {
             const vide = new Discord.MessageEmbed()
             .setColor("GREY")
             .setDescription(`𝐋e lien est manquant/incorrect.`)
-            return message.channel.send(vide).then(sent => sent.delete({timeout: 7e3}));
+            return message.channel.send(vide).then(sent => sent.delete({timeout: 5e3}));
           }
             else {
               if(list.length > 0){
@@ -225,14 +221,14 @@ Client.on("message", async message => {
                 const nowPlay = new Discord.MessageEmbed()
                 .setColor("GREY")
                 .setDescription(`:loud_sound: 𝐎k mon bro. 𝐉'ajoute à la playlist.`)
-                await message.channel.send(nowPlay).then(sent => sent.delete({timeout: 7e3}));
+                await message.channel.send(nowPlay).then(sent => sent.delete({timeout: 4e3}));
               }
                 else {
                   list.push(args[1]);
                   const nowPlays = new Discord.MessageEmbed()
                   .setColor("GREY")
-                  .setDescription(`:loud_sound: 𝐎k mon bro. 𝐉'ajoute à la playlist.`)
-                  await message.channel.send(nowPlays).then(sent => sent.delete({timeout: 7e3}));
+                  .setDescription(`:loud_sound: 𝐉e joue tisuite.`)
+                  await message.channel.send(nowPlays).then(sent => sent.delete({timeout: 4e3}));
 
                   message.member.voice.channel.join().then(connection => {
                     playMusic(connection);
@@ -248,7 +244,7 @@ Client.on("message", async message => {
       }
     message.delete()
     }
-}
+  }
 
 
 
