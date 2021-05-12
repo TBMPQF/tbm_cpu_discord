@@ -8,9 +8,17 @@ const config = require('./config.json');
 const mongoose = require("mongoose");
 const Levels = require('discord-xp');
 const level = require("./level-system");
-const ytdl = require("ytdl-core");
 
-var list = [];
+const distube = require('distube');
+const player = new distube(Client);
+
+player.on('playSong', (message, queue, song) => {
+    message.channel.send(`${song.name} has started playing!`)
+})
+
+Client.player = player;
+
+
 
 const prefix = "!"
 
@@ -224,7 +232,7 @@ Client.on("message", async message => {
                 list.push(args[1]);
                 const nowPlay = new Discord.MessageEmbed()
                 .setColor("GREY")
-                .setDescription(`:loud_sound: 𝐉e lance la musique tisuite.`)
+                .setDescription(`:loud_sound: 𝐎k mon bro. 𝐉'ajoute à la playlist.`)
                 await message.channel.send(nowPlay).then(sent => sent.delete({timeout: 7e3}));
               }
                 else {
