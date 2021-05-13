@@ -184,76 +184,9 @@ Client.on("message", async message => {
     message.react("831961805705183254")
   }
 
-  //list
-  if(message.content === prefix + "playlist"){
-    message.delete()
-    let msg = "**PLAYLIST :**\n";
-    for(var i = 1;i < list.length;i++){
-    let name;
-
-    let getinfo = await ytdl.getBasicInfo(list[i]);
-      name = getinfo.videoDetails.title;
-    msg += '**' + i + ".** " + name + '\n';
-
-    }
-    message.channel.send(msg);
-    
-  }
-    else if(message.content.startsWith(prefix + "play")){
-      const voiceChannel = message.member.voice.channel;
-      if (!voiceChannel){
-          const pasdeSalon = new Discord.MessageEmbed()
-          .setColor("GREY")
-          .setDescription(`𝐓u dois être dans un salon vocal avant d'effectuer cette commande \`!play\``)
-          return message.channel.send(pasdeSalon).then(sent => sent.delete({timeout: 5e3}));
-      }
-      if(message.member.voice.channel){
-        let args = message.content.split(" ");
-        if(args[1] == undefined || !args[1].startsWith("https://www.youtube.com/watch?v=")){
-            const vide = new Discord.MessageEmbed()
-            .setColor("GREY")
-            .setDescription(`𝐋e lien est manquant/incorrect.`)
-            return message.channel.send(vide).then(sent => sent.delete({timeout: 5e3}));
-          }
-            else {
-              if(list.length > 0){
-                list.push(args[1]);
-                const nowPlay = new Discord.MessageEmbed()
-                .setColor("GREY")
-                .setDescription(`:loud_sound: 𝐎k mon bro. 𝐉'ajoute à la playlist.`)
-                await message.channel.send(nowPlay).then(sent => sent.delete({timeout: 4e3}));
-              }
-                else {
-                  list.push(args[1]);
-                  const nowPlays = new Discord.MessageEmbed()
-                  .setColor("GREY")
-                  .setDescription(`:loud_sound: 𝐉e joue tisuite.`)
-                  await message.channel.send(nowPlays).then(sent => sent.delete({timeout: 4e3}));
-
-                  message.member.voice.channel.join().then(connection => {
-                    playMusic(connection);
-
-                    connection.on("disconnect", () =>{
-                      list = [];
-                    });
-
-                  }).catch(err => {
-                    message.reply("erreur lors de la connexion : " + err);
-                })
-          }
-      }
-    message.delete()
-    }
-  }
-
-
-
-
-
-
   const args = message.content.trim().split(/ +/g)
   const commandName = args.shift().toLowerCase()
-  const command = Client.commands.get(commandName.slice(config.prefix.length));
+  const command = Client.commands.get(commandName.slice(config.prefix.length)) || Client.commands.find(a => a.aliases && a.aliases.includes(commandName));
 
   if (!commandName.startsWith(config.prefix)) return
   if (!command) return
@@ -283,27 +216,5 @@ Client.on("message", async message => {
 
   command.run(message, args, Client)
 })
-
-function playMusic(connection){
-  let dispatcher = connection.play(ytdl(list[0], { quality: "highestaudio" }));
-
-  dispatcher.on("finish", () => {
-      list.shift();
-      dispatcher.destroy();
-
-      if(list.length > 0){
-          playMusic(connection);
-      }
-      else {
-          connection.disconnect();
-      }
-  });
-
-  dispatcher.on("error", err => {
-      console.log("erreur de dispatcher : " + err);
-      dispatcher.destroy();
-      connection.disconnect();
-  })
-}
 
 Client.login(process.env.TOKEN);
