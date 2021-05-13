@@ -193,7 +193,7 @@ Client.on("message", async message => {
 
   const args = message.content.trim().split(/ +/g)
   const commandName = args.shift().toLowerCase()
-  const command = Client.commands.get(commandName.slice(config.prefix.length)) || Client.commands.find(a => a.aliases && a.aliases.includes(commandName));
+  const command = Client.commands.get(commandName.slice(config.prefix.length)) || Client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
   if (!commandName.startsWith(config.prefix)) return
   if (!command) return
