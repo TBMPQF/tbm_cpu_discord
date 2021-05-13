@@ -25,9 +25,10 @@ mongoose.connect(process.env.DB_CONNECT, {
   .catch((err) => {
     console.log(err);
 });
-Levels.setURL(process.env.DB_CONNECT)
+Levels.setURL(process.env.DB_CONNECT);
 
-Client.commands = new Discord.Collection()
+Client.commands = new Discord.Collection();
+Client.aliases = new Discord.Collection();
  
 fs.readdir('./commands', (err, files) => {
     if (err) throw err
@@ -35,8 +36,14 @@ fs.readdir('./commands', (err, files) => {
         if (!file.endsWith('.js')) return
         const command = require(`./commands/${file}`)
         Client.commands.set(command.name, command)
-    })
-})
+
+        if (command.aliases) {
+          command.aliases.forEach(alias => {
+              Client.aliases.set(alias, command);
+          });
+        }
+    });
+});
 
 const cooldowns = new Map();
 

@@ -4,7 +4,6 @@ const Levels = require('discord-xp')
 const { MessageEmbed } = require("discord.js")
 
 module.exports = {
-    aliases: ["lvl"],
     run: async (message, args, member, user) => {
         message.delete()
 
@@ -30,5 +29,6 @@ module.exports = {
         
     },
     name: 'level',
+    aliases: ["lvl"],
     help: {description: '𝐓on niveau sur le serveur (Entre `1` et `50` points d\'expériences par message)\n𝐌erci de ne pas floodez sous peine de sanction.'}
 }
