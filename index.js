@@ -8,11 +8,6 @@ const config = require('./config.json');
 const mongoose = require("mongoose");
 const Levels = require('discord-xp');
 const level = require("./level-system");
-const ytdl = require('ytdl-core')
-
-var list = []
-
-const prefix = "!"
 
 mongoose.connect(process.env.DB_CONNECT, {
   useNewUrlParser: true,
