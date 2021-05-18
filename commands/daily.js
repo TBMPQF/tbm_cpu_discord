@@ -98,5 +98,5 @@ module.exports = {
     },
     name: 'daily',
     help: {description: '𝐑écupère ton bonus d\'expérience quotidien ! `+200 𝐗p`'},
-    cooldown: 86400,
+    cooldown: 82800,
 }
