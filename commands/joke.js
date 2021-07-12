@@ -30,7 +30,7 @@ const Discord = require('discord.js'),
             "**Pourquoi les handicapés aiment-t'ils bien le romarin ?**\n\n||Car ça se marie bien avec les légumes.||", "**C'est quoi un grain de riz dans un évier ?**\n\n||Un somalien qui a vomi toute la nuit ||",
             "**Quel est le meilleur moyen de traiter ses problèmes d'érection ?**\n\n||Le suicide.||", "**Où se situe la majeure partie de la population juive ?**\n\n||Ça dépend du vent.||",
             "**Une gamine de 8 ans dit à son père : - Papa, j'ai peur dans cette grande forêt toute sombre !**\n\n||- Qu'est-ce que je devrais dire, moi qui vais rentrer tout seul, ce soir !||", "**Hier j'ai donné un coup de pieds au cul à un Roumain.**\n\n||Le salop il a serré les fesses et m'a piqué une Nike...||",
-            "****\n\n||||", "****\n\n||||",
+            "**Qu'est-ce qu'un noir dans l'océan ?**\n\n||La polution.||", "**Qu'est-ce que tous les noirs dans l'océan ?**\n\n||La solution.||",
         ]
             //"****\n\n||||", "****\n\n||||",
 
