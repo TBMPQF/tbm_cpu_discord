@@ -14,7 +14,7 @@ module.exports = {
             .setColor("#b3c7ff")
             .setDescription(`__**𝐂lassement du serveur **__: \n\n${lb.join("\n\n")}`)
             .setThumbnail("https://zupimages.net/up/21/12/uc7d.png")
-            .setFooter(`a fait la demande丨`, message.author.displayAvatarURL({dynamic: true, size: 512}))
+            .setFooter(`a fait la demande`, message.author.displayAvatarURL({dynamic: true, size: 512}))
             .setTimestamp()
             message.channel.send(leaderEmbed)
         }
