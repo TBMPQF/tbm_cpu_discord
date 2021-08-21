@@ -208,7 +208,7 @@ Client.on("message", async message => {
       message.delete()
       var embed = new Discord.MessageEmbed()
         .setDescription(`𝐑eviens me voir dans \`${time_left.toFixed(0)}\` secondes. 𝐓u pourras utiliser cette commande à nouveau.`)
-        .setFooter(`丨`, message.author.displayAvatarURL({dynamic: true, size: 64}))
+        .setFooter(`|`, message.author.displayAvatarURL({dynamic: true, size: 64}))
         .setTimestamp()
         return message.channel.send(embed).then(sent => sent.delete({timeout: 10e3})
     )}
