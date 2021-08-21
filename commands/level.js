@@ -24,6 +24,7 @@ module.exports = {
             .setThumbnail(message.author.displayAvatarURL({dynamic: true, size: 512}))
             .addField(`Expériences :\n ${users.xp}/${xpRequired}`, "\u200B", true)
             .addField(`Niveaux :\n ${users.level}`, "\u200B", true)
+            .setTimestamp()
             message.channel.send(embed)
             }
         
