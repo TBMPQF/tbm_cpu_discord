@@ -186,7 +186,7 @@ Client.on("message", async message => {
     message.react("831961805705183254")
   }
   if(message.content === "sa va"||message.content === "sa va?"||message.content === "sa va ?"||message.content === "simer"||message.content === "re"||message.content === "RE"||message.content === "Re"||message.content === "cimer"||message.content === "LOL"){
-    message.react("879032673014800416")
+    message.react("813799700092157952")
   }
 
   const args = message.content.trim().split(/ +/g)
