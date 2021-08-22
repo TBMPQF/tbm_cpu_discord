@@ -179,11 +179,14 @@ Client.on("messageReactionRemove", async (reaction,user) => {
 
 Client.on("message", async message => {
   if (message.author.bot || message.channel.type === 'dm') return;
-  if(message.content === "salut"||message.content === "slt"||message.content === "yo"||message.content === "yoo"||message.content === "yooo"||message.content === "salu"||message.content === "Salut"||message.content === "YO"||message.content === "salut"||message.content === "Yo"){
+  if(message.content === "salut"||message.content === "slt"||message.content === "yo"||message.content === "yoo"||message.content === "yooo"||message.content === "salu"||message.content === "Salut"||message.content === "YO"||message.content === "salut"||message.content === "Yo"||message.content === "cc"||message.content === "CC"){
     message.react("🤟") // Réagis au messages aux dessus
   }
   if(message.content === "MÉNON"){
     message.react("831961805705183254")
+  }
+  if(message.content === "sa va"||message.content === "sa va?"||message.content === "sa va ?"||message.content === "simer"||message.content === "re"||message.content === "RE"||message.content === "Re"||message.content === "cimer"||message.content === "LOL"){
+    message.react("879032673014800416")
   }
 
   const args = message.content.trim().split(/ +/g)
