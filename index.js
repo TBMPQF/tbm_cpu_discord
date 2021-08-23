@@ -185,7 +185,7 @@ Client.on("message", async (reaction, message) => {
   if(message.content === "MÉNON"){
     message.react("831961805705183254")
   }
-  if(message.content === "pk"||message.content === "PK"||message.content === "pq"||message.content === "PQ"||message.content === "pk ?"||message.content === "pk?"){
+  if(message.content === "pk"||message.content === "PK"||message.content === "pq"||message.content === "PQ"||message.content === "pk ?"||message.content === "pk?"||message.content === "xd"||message.content === "xD"||message.content === "XD"){
     await message.react("‼️")
     await message.react("🚫")
   }
