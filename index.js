@@ -177,7 +177,7 @@ Client.on("messageReactionRemove", async (reaction,user) => {
   }
 });
 
-Client.on("message", async (user, message) => {
+Client.on("message", message => {
   if(user.bot) return;
   if(message.content === "salut"||message.content === "slt"||message.content === "yo"||message.content === "yoo"||message.content === "yooo"||message.content === "salu"||message.content === "Salut"||message.content === "YO"||message.content === "salut"||message.content === "Yo"||message.content === "cc"||message.content === "CC"){
     message.react("🤟") // Réagis au messages aux dessus
