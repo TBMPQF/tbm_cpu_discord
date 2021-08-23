@@ -186,7 +186,8 @@ Client.on("message", async message => {
     message.react("831961805705183254")
   }
   if(message.content === "pk"||message.content === "PK"||message.content === "pq"||message.content === "PQ"||message.content === "pk ?"||message.content === "pk?"||message.content === "xd"||message.content === "xD"||message.content === "XD"){
-    message.react("🇸")
+    await message.react("🇸")
+    await message.react("🇹")
   }
   if(message.content === "sa va"||message.content === "sa va?"||message.content === "sa va ?"||message.content === "simer"||message.content === "re"||message.content === "RE"||message.content === "Re"||message.content === "cimer"||message.content === "LOL"){
     message.react("813799700092157952")
