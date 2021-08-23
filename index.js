@@ -177,7 +177,7 @@ Client.on("messageReactionRemove", async (reaction,user) => {
   }
 });
 
-Client.on("message", async message => {
+Client.on("message", async (reaction, message) => {
   if (message.author.bot || message.channel.type === 'dm') return;
   if(message.content === "salut"||message.content === "slt"||message.content === "yo"||message.content === "yoo"||message.content === "yooo"||message.content === "salu"||message.content === "Salut"||message.content === "YO"||message.content === "salut"||message.content === "Yo"||message.content === "cc"||message.content === "CC"){
     message.react("🤟") // Réagis au messages aux dessus
@@ -186,7 +186,8 @@ Client.on("message", async message => {
     message.react("831961805705183254")
   }
   if(message.content === "pk"||message.content === "PK"||message.content === "pq"||message.content === "PQ"||message.content === "pk ?"||message.content === "pk?"){
-    message.react("\:regional_indicator_s:")
+    await message.react("\🇸")
+    await message.react("\🇸")
   }
   if(message.content === "sa va"||message.content === "sa va?"||message.content === "sa va ?"||message.content === "simer"||message.content === "re"||message.content === "RE"||message.content === "Re"||message.content === "cimer"||message.content === "LOL"){
     message.react("813799700092157952")
