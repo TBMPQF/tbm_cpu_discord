@@ -185,10 +185,13 @@ Client.on("message", async message => { // Réagis au messages aux dessus
   if(message.content === "MÉNON"){
     message.react("831961805705183254")
   }
+  if(message.content = "démon"||message.content == "demon"){
+    message.react("👹")
+  }
   if(message.content === "Bon toutou"||message.content === "bon toutou"||message.content === "Clébard"||message.content === "clébard"||message.content === "clebard"||message.content === "Clebard"){
     message.react("843919516375187478")
   }
-  if(message.content === "pk"||message.content === "PK"||message.content === "PK?"||message.content === "Pk?"||message.content === "Pk"||message.content === "Pq?"||message.content === "Pq"||message.content === "pq"||message.content === "PQ"||message.content === "pk ?"||message.content === "pk?"||message.content === "xd"||message.content === "xD"||message.content === "XD"){
+  if(message.content === "pk"||message.content === "PK"||message.content === "PK?"||message.content === "Pk?"||message.content === "Pk"||message.content === "Pq?"||message.content === "Pq"||message.content === "pq"||message.content === "PQ"||message.content === "pk ?"||message.content === "pk?"||message.content === "xd"||message.content === "xD"||message.content === "XD"||message.content === "Xd"){
     await message.react("🇸")
     await message.react("🇹")
     await message.react("🇴")
