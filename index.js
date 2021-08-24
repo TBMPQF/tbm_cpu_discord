@@ -195,7 +195,7 @@ Client.on("message", async message => { // Réagis au messages aux dessus
     await message.react("🇵")
     await message.react("‼️")
   }
-  if(message.content === "sa va"||message.content === "sa va?"||message.content === "sava"||message.content === "Sa va?"||message.content === "Sava"||message.content === "sa va ?"||message.content === "simer"||message.content === "re"||message.content === "RE"||message.content === "Re"||message.content === "cimer"||message.content === "LOL"){
+  if(message.content === "tfq ?"||message.content === "tfk ?"||message.content === "tfq"||message.content === "tfk"||message.content === "tfq?"||message.content === "tfk?"||message.content === "sa va"||message.content === "sa va?"||message.content === "sava"||message.content === "Sa va?"||message.content === "Sava"||message.content === "sa va ?"||message.content === "simer"||message.content === "re"||message.content === "RE"||message.content === "Re"||message.content === "cimer"||message.content === "LOL"){
     message.react("📛")
   }
 
