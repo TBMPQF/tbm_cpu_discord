@@ -185,9 +185,6 @@ Client.on("message", async message => { // Réagis au messages aux dessus
   if(message.content === "MÉNON"){
     message.react("831961805705183254")
   }
-  if(message.content = "démon"||message.content == "demon"){
-    message.react("👹")
-  }
   if(message.content === "Bon toutou"||message.content === "bon toutou"||message.content === "Clébard"||message.content === "clébard"||message.content === "clebard"||message.content === "Clebard"){
     message.react("843919516375187478")
   }
