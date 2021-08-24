@@ -177,23 +177,26 @@ Client.on("messageReactionRemove", async (reaction,user) => {
   }
 });
 
-Client.on("message", async message => {
+Client.on("message", async message => { // Réagis au messages aux dessus
   if (message.author.bot || message.channel.type === 'dm') return;
-  if(message.content === "salut"||message.content === "slt"||message.content === "yo"||message.content === "yoo"||message.content === "yooo"||message.content === "salu"||message.content === "Salut"||message.content === "YO"||message.content === "salut"||message.content === "Yo"||message.content === "cc"||message.content === "CC"){
-    message.react("🤟") // Réagis au messages aux dessus
+  if(message.content === "salut"||message.content === "slt"||message.content === "yo"||message.content === "yoo"||message.content === "yooo"||message.content === "salu"||message.content === "Salut"||message.content === "YO"||message.content === "salut"||message.content === "Yo"||message.content === "cc"||message.content === "CC"||message.content === "Cc"){
+    message.react("🤟")
   }
   if(message.content === "MÉNON"){
     message.react("831961805705183254")
   }
-  if(message.content === "pk"||message.content === "PK"||message.content === "pq"||message.content === "PQ"||message.content === "pk ?"||message.content === "pk?"||message.content === "xd"||message.content === "xD"||message.content === "XD"){
+  if(message.content === "Bon toutou"||message.content === "bon toutou"||message.content === "Clébard"||message.content === "clébard"||message.content === "clebard"||message.content === "Clebard"){
+    message.react("843919516375187478")
+  }
+  if(message.content === "pk"||message.content === "PK"||message.content === "PK?"||message.content === "Pk?"||message.content === "Pk"||message.content === "Pq?"||message.content === "Pq"||message.content === "pq"||message.content === "PQ"||message.content === "pk ?"||message.content === "pk?"||message.content === "xd"||message.content === "xD"||message.content === "XD"){
     await message.react("🇸")
     await message.react("🇹")
     await message.react("🇴")
     await message.react("🇵")
     await message.react("‼️")
   }
-  if(message.content === "sa va"||message.content === "sa va?"||message.content === "sa va ?"||message.content === "simer"||message.content === "re"||message.content === "RE"||message.content === "Re"||message.content === "cimer"||message.content === "LOL"){
-    message.react("813799700092157952")
+  if(message.content === "sa va"||message.content === "sa va?"||message.content === "sava"||message.content === "Sa va?"||message.content === "Sava"||message.content === "sa va ?"||message.content === "simer"||message.content === "re"||message.content === "RE"||message.content === "Re"||message.content === "cimer"||message.content === "LOL"){
+    message.react("📛")
   }
 
   const args = message.content.trim().split(/ +/g)
