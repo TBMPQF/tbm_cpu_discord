@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Discord = require("discord.js");
 const Levels = require('discord-xp')
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     run: async (message, args, member, user) => {
@@ -17,8 +17,7 @@ module.exports = {
             message.channel.send(embede).then(sent => sent.delete({timeout: 5e3})
             )}
         if(user1.level >= 0){
-            const targetLevel = users.level
-            const xpRequired = Levels.xpFor(targetLevel)
+            const xpRequired = Levels.xpFor(50) - users.level;
             var embed = new Discord.MessageEmbed()
             .setColor("#0099E1")
             .setTitle(`Implication de : *__${u}__*`)
