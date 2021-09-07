@@ -203,7 +203,7 @@ Client.on("message", async message => { // Réagis au messages aux dessus
   const commandName = args.shift().toLowerCase()
   const command = Client.commands.get(commandName.slice(config.prefix.length)) || Client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-  if (!commandName.startsWith(config.prefix)) return
+  //if (!commandName.startsWith(config.prefix)) return
   if (!command) return
 
   if(!cooldowns.has(command.name)){
