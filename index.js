@@ -69,7 +69,7 @@ Client.on("messageReactionAdd", async (reaction, user, message) => {
       parent: "823950661523603466",
       topic: `𝐓icket ouvert ouvert par ${user.tag}. 𝐒i tu veux fermer le ticket réagis avec 🔒`,
       promiisionOverwrites: [
-        { id: message.user.id, allow: ["SEND_MESSAGES", "VIEW_CHANNEL"], },
+        { id: user.id, allow: ["SEND_MESSAGES", "VIEW_CHANNEL"], },
         { id: reaction.message.guild.roles.everyone, deny: ["VIEW_CHANNEL"], },
       ]
     }).then(ch => {
