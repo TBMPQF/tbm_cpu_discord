@@ -3,16 +3,18 @@ const { MessageEmbed } = require("discord.js")
 module.exports = (Client) => {
     const welcomechannelId = "825333855933300778"
     const targetChannelId = "811721151998853150"
+    const roleChannelId = "811652152467783690"
 
     Client.on("guildMemberAdd", (member) => {
         const channel = member.guild.channels.cache.get(welcomechannelId)
+        const channel = member.guild.channels.cache.get(roleChannelId)
         member.roles.add("825023017645899822");
         console.log(`Bienvenue à ${member.user.username}`);
 
         const memberAdd = new MessageEmbed()
         .setTitle("Oh! Un nouveau membre :warning:")
         .setThumbnail(member.user.displayAvatarURL({dynamic: true, size: 512}))
-        .setDescription(`Bienvenue <@${member.user.id}>, tu viens de rejoindre la **${member.guild.name}**. \nPrend ton fusil et direct sur le champ de tir !\nN'oublie pas de lire le ${member.guild.channels.cache.get(targetChannelId).toString()}.`)
+        .setDescription(`Bienvenue <@${member.user.id}>, tu viens de rejoindre la **${member.guild.name}**. \nPrend ton fusil et direct sur le champ de tir !\nN'oublie pas de lire/accepter le ${member.guild.channels.cache.get(targetChannelId).toString()} et de prendre tes ${member.guild.channels.cache.get(roleChannelId).toString()} de jeux.`)
         .setTimestamp()
         .setFooter(`${member.user.username} vient de passer au rang de 丨2nd 𝐂lasse`,member.user.displayAvatarURL({dynamic: true, size: 512}))
         .setColor("#ffc394")
