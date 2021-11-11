@@ -7,7 +7,6 @@ module.exports = (Client) => {
 
     Client.on("guildMemberAdd", (member) => {
         const channel = member.guild.channels.cache.get(welcomechannelId)
-        const channel = member.guild.channels.cache.get(roleChannelId)
         member.roles.add("825023017645899822");
         console.log(`Bienvenue à ${member.user.username}`);
 

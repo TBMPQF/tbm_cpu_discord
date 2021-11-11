@@ -121,13 +121,17 @@ Client.on("messageReactionAdd", async (reaction, user, message) => {
       await reaction.message.guild.members.cache.get(user.id).roles.add("811663679351160890");
       console.log(`Rôle 7 Days to Die ajouté par ${user.username}`)
     }
-    if (reaction.emoji.id === "813799741791797308") { // Donne le rôle Warzone
+    if (reaction.emoji.id === "908480493345964062") { // Donne le rôle Call of Duty
       await reaction.message.guild.members.cache.get(user.id).roles.add("813800188317663254");
-      console.log(`Rôle Warzone ajouté par ${user.username}`)
+      console.log(`Rôle Call of Duty ajouté par ${user.username}`)
     }
     if (reaction.emoji.id === "813051787228872744") { // Donne le rôle Among Us
       await reaction.message.guild.members.cache.get(user.id).roles.add("813800381393141811");
       console.log(`Rôle Among Us ajouté par ${user.username}`)
+    }
+    if (reaction.emoji.id === "908486538625695785") { // Donne le rôle New World
+      await reaction.message.guild.members.cache.get(user.id).roles.add("907320710559576105");
+      console.log(`Rôle New World ajouté par ${user.username}`)
     }
   } else {
     return;
@@ -171,6 +175,10 @@ Client.on("messageReactionRemove", async (reaction,user) => {
     if (reaction.emoji.id === "813051787228872744") { //Among Us
       await reaction.message.guild.members.cache.get(user.id).roles.remove("813800381393141811");
       console.log(`Rôle Among Us supprimé par ${user.username}`)
+    }
+    if (reaction.emoji.id === "908486538625695785") { //New World
+      await reaction.message.guild.members.cache.get(user.id).roles.remove("907320710559576105");
+      console.log(`Rôle New World supprimé par ${user.username}`)
     }
   } else {
     return;

@@ -85,7 +85,7 @@ module.exports = (Client) => {
                         .then(message.member.roles.remove('813795871661359124')); 
                     }
                     if(user.level == 49){
-                        Client.channels.cache.get(`717154831823011890`).send(` - 𝐓u débloques le dernier grade ${cinquanteRole}. 𝐅élicitation ! :tada:`)
+                        Client.channels.cache.get(`717154831823011890`).send(` - 𝐓u débloques le dernier grade ${cinquanteRole}. 𝐅élicitation à toi, tu peux prendre ta retraite ! :tada: :tada:`)
                         .then(message.member.roles.add('813795963805761547'))
                         .then(message.member.roles.remove('813795921480908840'));
                     }

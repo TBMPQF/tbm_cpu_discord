@@ -24,18 +24,20 @@ module.exports = {
         const amongusRole = message.guild.roles.cache.get("813800381393141811");
         const daystodieRole = message.guild.roles.cache.get("811663679351160890");
         const warzoneRole = message.guild.roles.cache.get("813800188317663254");
+        const newworldRole = message.guild.roles.cache.get("907320710559576105");
         const apexEmoji = message.guild.emojis.cache.get("811709208726077440");
         const rocketEmoji = message.guild.emojis.cache.get("813798557026877460");
         const minecraftEmoji = message.guild.emojis.cache.get("813799505077076008");
         const amongusEmoji = message.guild.emojis.cache.get("813051787228872744");
         const daystodieEmoji = message.guild.emojis.cache.get("813800088916197416");
         const warzoneEmoji = message.guild.emojis.cache.get("813799741791797308");
+        const newworldEmoji = message.guild.emojis.cache.get("908486538625695785");
 
         if (message.member.hasPermission('MANAGE_GUILD')){
             var embed = new Discord.MessageEmbed()
             .setColor("#b3c7ff")
-            .setTitle("𝐒éléctionne ta `réaction` pour obtenir le `rôle`.")
-            .setDescription(`${apexEmoji} - ${apexRole.toString()}\n\n ${rocketEmoji} - ${rocketRole.toString()}\n\n ${minecraftEmoji} - ${minecraftRole.toString()}\n\n ${daystodieEmoji} - ${daystodieRole.toString()}\n\n ${warzoneEmoji} - ${warzoneRole.toString()}\n\n ${amongusEmoji} - ${amongusRole.toString()}`)
+            .setTitle("𝐒éléctionne ta `réaction` pour obtenir le `rôle` !")
+            .setDescription(`${apexEmoji} - ${apexRole.toString()}\n\n ${rocketEmoji} - ${rocketRole.toString()}\n\n ${minecraftEmoji} - ${minecraftRole.toString()}\n\n ${daystodieEmoji} - ${daystodieRole.toString()}\n\n ${warzoneEmoji} - ${warzoneRole.toString()}\n\n ${amongusEmoji} - ${amongusRole.toString()}\n\n ${newworldEmoji} - ${newworldRole.toString()}`)
             message.channel.send(embed).then(async msg => {
                 await msg.react(apexEmoji);
                 await msg.react(rocketEmoji);
@@ -43,6 +45,7 @@ module.exports = {
                 await msg.react(daystodieEmoji);
                 await msg.react(warzoneEmoji);
                 await msg.react(amongusEmoji);
+                await msg.react(newworldEmoji);
             });
         }
     },
