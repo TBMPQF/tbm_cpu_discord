@@ -148,7 +148,7 @@ Client.on("messageReactionRemove", async (reaction,user) => {
 
   if (reaction.emoji.id === "827661704065318973") { // Règlement
     await reaction.message.guild.members.cache.get(user.id).roles.remove("811662602530717738");
-    console.log(`Règlement invalidé par ${user.username}`)
+    console.log(`Règlement décocher par ${user.username}`)
   }
 
   if (reaction.message.channel.id === "811652152467783690") {
