@@ -1,5 +1,5 @@
 const Discord = require('discord.js'),
-    replies = ['Oui', 'Non', 'Peut-être', 'Évidemment', 'Sans aucun doute mon bro', 'Pourquoi pas', 'Certainement pas!', 'J\'ai un doûte', 'La réponse D', 'Inshallah', 'Encore heureux', 'Imagine', 'Parfaitement', 'A merveille', 'Pas du tout', 'Absolument pas', 'Il semblerait', '01001111 01110101 01101001']
+    replies = ['Oui', 'Non', 'Peut-être', 'Évidemment', 'Sans aucun doute mon bro', 'Pourquoi pas', 'Certainement pas!', 'J\'ai un doûte', 'La réponse D', 'Inshallah', 'Encore heureux', 'Imagine', 'Parfaitement', 'A merveille', 'Pas du tout', 'Absolument pas', 'Il semblerait', '01001111 01110101 01101001', 'Imagine juste...']
 
  
 module.exports = {
