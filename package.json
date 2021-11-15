@@ -9,7 +9,7 @@
     "commands": "^0.0.7",
     "discord-player": "^3.4.0",
     "discord-xp": "^1.1.14",
-    "discord.js": "^12.5.1",
+    "discord.js": "^12.5.3",
     "discord.js-musicbot-addon": "^13.9.1",
     "distube": "^2.8.13",
     "dotenv": "^9.0.0",
@@ -31,7 +31,6 @@
     "ytdl": "^1.4.1",
     "ytdl-core": "^4.7.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
