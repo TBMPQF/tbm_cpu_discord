@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.55",
     "canvacord": "^5.1.0",
     "canvas": "^2.7.0",
     "commands": "^0.0.7",
