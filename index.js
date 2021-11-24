@@ -121,7 +121,7 @@ Client.on("messageReactionAdd", async (reaction, user, message) => {
       await reaction.message.guild.members.cache.get(user.id).roles.add("811663679351160890");
       console.log(`Rôle 7 Days to Die ajouté par ${user.username}`)
     }
-    if (reaction.emoji.id === "908480493345964062") { // Donne le rôle Call of Duty
+    if (reaction.emoji.id === "813799741791797308") { // Donne le rôle Call of Duty
       await reaction.message.guild.members.cache.get(user.id).roles.add("813800188317663254");
       console.log(`Rôle Call of Duty ajouté par ${user.username}`)
     }
