@@ -168,9 +168,9 @@ Client.on("messageReactionRemove", async (reaction,user) => {
       await reaction.message.guild.members.cache.get(user.id).roles.remove("811663679351160890");
       console.log(`Rôle 7 Days to Die supprimé par ${user.username}`)
     }
-    if (reaction.emoji.id === "813799741791797308") { //Warzone
+    if (reaction.emoji.id === "813799741791797308") { //Call of Duty
       await reaction.message.guild.members.cache.get(user.id).roles.remove("813800188317663254");
-      console.log(`Rôle Warzone supprimé par ${user.username}`)
+      console.log(`Rôle Call of Duty supprimé par ${user.username}`)
     }
     if (reaction.emoji.id === "813051787228872744") { //Among Us
       await reaction.message.guild.members.cache.get(user.id).roles.remove("813800381393141811");
